@@ -1,0 +1,531 @@
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+% A clean template for an academic CV. This is a short summary version.
+%
+% Uses tabularx to create two column entries (date and job/edu/citation).
+% Defines commands to make adding entries simpler.
+%
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\documentclass[9pt,a4paper]{article}
+
+% Useful aliases
+\newcommand{\TJU}{Tongji University}
+\newcommand{\TP}{Télécom Paris}
+\newcommand{\HDU}{Hangzhou Dianzi University}
+
+
+% Identifying information
+\newcommand{\Title}{Curriculum Vit\ae}
+\newcommand{\FirstName}{Shuaifan}
+\newcommand{\LastName}{Xia}
+\newcommand{\Initials}{S}
+\newcommand{\MyName}{\FirstName\ \LastName}
+\newcommand{\Me}{\underline{\Initials. \LastName}}  % For citations
+\newcommand{\Email}{shuaifan.xia@telecom-paris.fr}
+\newcommand{\PersonalWebsite}{collin911.github.io/homepage}
+\newcommand{\LabWebsite}{www.compgeolab.org}
+\newcommand{\ORCID}{0000-0002-9769-4373}
+\newcommand{\GitHubProfile}{collin911}
+
+% Names for citing coauthors
+\newcommand{\Lqw}{Q. Liu}
+\newcommand{\Lmq}{M. Liu}
+\newcommand{\Fw}{W. Fang}
+\newcommand{\Jqw}{Q. Jiang}
+\newcommand{\Lxz}{X. Li}
+\newcommand{\Xml}{M. Xiong}
+\newcommand{\Zsl}{S. Zhou}
+\newcommand{\Xmy}{M. Xu}
+\newcommand{\Dh}{H. Deng}
+
+
+
+% Load packages
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+% Full Unicode support for non-ASCII characters
+\usepackage[utf8]{inputenc}
+\usepackage[english]{babel}
+\usepackage[TU]{fontenc}
+
+% Set main fonts
+\usepackage[sfdefault]{atkinson}
+\usepackage[ttdefault]{sourcecodepro}
+
+% Icon fonts
+\usepackage{fontawesome5}
+\usepackage{academicons}
+
+% Disable hyphenation
+\usepackage[none]{hyphenat}
+
+% Control the font size
+\usepackage{anyfontsize}
+
+% For fancy and multipage tables
+\usepackage{tabularx}
+\usepackage{ltablex}
+
+% For new environments
+\usepackage{environ}
+
+% Manage dates and times
+\usepackage{datetime}
+
+% Set the page margins
+\usepackage{geometry}
+
+% To get the total page numbers (\pageref{LastPage})
+\usepackage{lastpage}
+
+% Control spacing in enumerates
+\usepackage{enumitem}
+
+% Use custom colors
+\usepackage[usenames,dvipsnames]{xcolor}
+
+% Configure section titles
+\usepackage{titlesec}
+
+% Fancy header configuration
+\usepackage{fancyhdr}
+
+% Control PDF metadata and links
+\usepackage[colorlinks=true]{hyperref}
+
+
+% Template configuration
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+
+\geometry{%
+  margin=12.5mm,
+  headsep=0mm,
+  headheight=0mm,
+  footskip=5mm,
+  includehead=true,
+  includefoot=true
+}
+
+% Custom colors
+\definecolor{mediumgray}{gray}{0.5}
+\definecolor{lightgray}{gray}{0.9}
+\definecolor{mediumblue}{HTML}{2060c2}
+\definecolor{lightblue}{HTML}{a0c3ff}
+
+% No indentation
+\setlength\parindent{0cm}
+
+% Increase the line spacing
+\renewcommand{\baselinestretch}{1.1}
+% and the spacing between rows in tables
+\renewcommand{\arraystretch}{1.25}
+
+% Remove space between items in itemize and enumerate
+\setlist{nosep}
+
+% Set the spacing and format of sections
+\titleformat{\section}
+  {\normalfont\Large\mdseries} % format
+  {} % label
+  {0pt} % separation (left separation for hang)
+  {} % text before title
+  [\titlerule] % text after title
+\titlespacing*{\section}
+  {0pt} % left pad
+  {0.1cm} % before
+  {0cm} % after
+
+% Disable number of sections. Use this instead of "section*" so that the sections still
+% appear as PDF bookmarks. Otherwise, would have to add the table of contents entries
+% manually.
+\makeatletter
+\renewcommand{\@seccntformat}[1]{}
+\makeatother
+
+% Define a new environment to place all CV entries in a 2-column table.
+% Left column are the dates, right column the entries.
+\newcommand{\TablePad}{\vspace{-0.2cm}}
+\NewEnviron{EntriesTableDuration}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.10\textwidth}@{\hspace{0.02\textwidth}}p{0.88\textwidth}@{}}
+  \BODY
+\end{tabularx}
+\TablePad
+}
+\NewEnviron{EntriesTableYear}{
+\TablePad
+\begin{tabularx}{\textwidth}{@{}p{0.05\textwidth}@{\hspace{0.01\textwidth}}p{0.94\textwidth}@{}}
+  \BODY
+\end{tabularx}
+\TablePad
+}
+
+% Macros to set the year and duration on the left column
+\newcommand{\Duration}[2]{\fontsize{10pt}{0}\selectfont \texttt{#1-#2}}
+\newcommand{\Year}[1]{\fontsize{10pt}{0}\selectfont \texttt{#1}}
+\newcommand{\Ongoing}{on}
+\newcommand{\Future}{future}
+
+% Macros to add links and mark publications
+\newcommand{\DOI}[1]{doi:\href{https://doi.org/#1}{#1}}
+\newcommand{\Website}[1]{\href{https://#1}{#1}}
+\newcommand{\Preprint}[1]{Preprint: \href{https://doi.org/#1}{#1}}
+\newcommand{\GitHub}[1]{\faGithub{} \href{https://github.com/#1}{#1}}
+\newcommand{\Data}[1]{\faChartBar{} doi:\href{https://doi.org/#1}{#1}}
+
+% Define command to insert month name and year as date
+\newdateformat{monthyear}{\monthname[\THEMONTH], \THEYEAR}
+
+% Configure a fancy footer
+\newcommand{\Separator}{\hspace{3pt}|\hspace{3pt}}
+\newcommand{\FooterFont}{\footnotesize\color{mediumgray}}
+\pagestyle{fancy}
+\fancyhf{}
+\lfoot{%
+  \FooterFont{}
+  \MyName{}
+  \Separator{}
+  \Title{}
+}
+\rfoot{%
+  \FooterFont{}
+  Last updated: \monthyear\today{}
+  \Separator{}
+  \thepage\space of\space \pageref*{LastPage}
+}
+\renewcommand{\headrulewidth}{0pt}
+\renewcommand{\footrulewidth}{1pt}
+\preto{\footrule}{\color{lightgray}}
+
+% Metadata for the PDF output and control of hyperlinks
+\hypersetup{
+  colorlinks,
+  allcolors=mediumblue,
+  breaklinks=true,
+  pdftitle={\Title{} - \MyName},
+  pdfauthor={\MyName},
+}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\begin{document}
+
+\begin{minipage}[t]{0.5\textwidth}
+  {\fontsize{20pt}{0}\selectfont\MyName}
+\end{minipage}
+\begin{minipage}[t]{0.5\textwidth}
+  \begin{flushright}
+    \Title{}
+  \end{flushright}
+\end{minipage}
+\\[-0.1cm]
+\textcolor{lightgray}{\rule{\textwidth}{3pt}}
+\begin{minipage}[t]{0.8\textwidth}
+  Website: \Website{\PersonalWebsite}
+  \\
+  Email: \href{mailto:\Email}{\Email}
+  \\
+  ORCID: \href{https://orcid.org/\ORCID}{\ORCID}
+  \\
+  Google Scholar: \href{https://scholar.google.com/citations?user=x4Y8uCAAAAAJ}{\MyName}
+\end{minipage}
+\begin{minipage}[t]{0.09\textwidth}
+  %\begin{flushright}
+    \textbf{Chinese} 
+    \\
+    \textbf{English} 
+    \\
+    \textbf{French} 
+    \\
+    \textbf{German}
+  %\end{flushright}
+\end{minipage}
+\begin{minipage}[t]{0.1\textwidth}
+  \begin{flushright}
+    Native
+    \\
+    TOEFL 107
+    \\
+    A2
+    \\
+    Basic
+  \end{flushright}
+\end{minipage}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Education}
+
+\begin{EntriesTableDuration}
+  \Duration{2024}{\Ongoing}  &
+  \textbf{Ingénieur in Computer Science}, \TP, Île-de-France, France.
+  \\ & GPA: 3.79/4.0
+  %\DOI{10.6084/m9.figshare.16883689}
+  \\
+  \Duration{2022}{2025}  &
+  \textbf{MSc in Computer Science}, \TJU, Shanghai, China.
+  \\ & GPA: 4.83/5.0 Ranking: 1/48 Research Area: Internet of Things
+  %\DOI{10.6084/m9.figshare.16882300}
+  \\
+  \Duration{2018}{2022}  &
+  \textbf{BSc in Information Security}, \HDU, Zhejiang, China.
+  \\ & GPA: 4.72/5.0 Ranking: 1/116 \emph{Summa Cum Laude}
+  %\DOI{10.6084/m9.figshare.963547}
+\end{EntriesTableDuration}
+
+
+\iffalse
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Community Service}
+
+\begin{EntriesTableDuration}
+  \Duration{2024}{\Ongoing} & \textbf{Embaixador}, Rede Brasileira de Reprodutibilidade, \Website{www.reprodutibilidade.org}
+  \\
+  \Duration{2024}{\Ongoing} & \textbf{Advisory Council Member}, EarthArXiv, \Website{eartharxiv.org}
+  \\
+  \Duration{2022}{\Ongoing} & \textbf{Board Member}, Software Underground, \Website{softwareunderground.org}
+  \\
+  \Duration{2022}{2023} & \textbf{Advisory Committee Member}, pyOpenSci, \Website{www.pyopensci.org}
+  \\
+  \Duration{2019}{2022} & \textbf{Topic Editor}, Journal of Open Source Software, \Website{joss.theoj.org}
+\end{EntriesTableDuration}
+
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Open Research Software}
+
+\begin{EntriesTableDuration}
+  \Duration{2010}{\Ongoing} &
+  \textbf{Fatiando a Terra} | \Website{www.fatiando.org}
+  \newline
+  \textit{Python tools for geophysical data processing, forward modeling, and inversion}
+  \newline
+  Role: Project founder, core developer, Steering Council Member
+  \\
+  \Duration{2017}{\Ongoing} &
+  \textbf{The Generic Mapping Tools (GMT)} | \Website{www.generic-mapping-tools.org}
+  \newline
+  \textit{A data processing and mapping toolbox for the Earth, Ocean, and Planetary Science}
+  \newline
+  Role: Community stewardship advisor, set up the website + forum + GitHub workflow
+  \\
+  \Duration{2022}{\Ongoing} &
+  \textbf{xlandsat} | \Website{www.compgeolab.org/xlandsat}
+  \newline
+  \textit{Load Landsat remote sensing scenes in Python and xarray}
+  \newline
+  Role: Creator and sole developer
+  \\
+  \Duration{2017}{2021} &
+  \textbf{PyGMT} | \Website{www.pygmt.org}
+  \newline
+  \textit{A Python interface for the Generic Mapping Tools}
+  \newline
+  Role: Project founder, developer, advisor
+  \\
+  \Duration{2009}{2016} &
+  \textbf{Tesseroids} | \Website{tesseroids.leouieda.com}
+  \newline
+  \textit{Forward modeling of gravitational fields in spherical coordinates}
+  \newline
+  Role: Creator and sole developer
+\end{EntriesTableDuration}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Open Educational Resources}
+
+\begin{EntriesTableYear}
+  \Year{2022} &
+  \textbf{A Quick Introduction to Machine Learning}.
+  \GitHub{leouieda/ml-intro}.
+  \\
+  \Year{2023} &
+  \textbf{Remote Sensing with Python}.
+  \GitHub{leouieda/remote-sensing}.
+  \\
+  \Year{2023} &
+  \textbf{Lithosphere Dynamics with Python}.
+  \GitHub{leouieda/lithosphere}.
+  \\
+  \Year{2022} &
+  \textbf{Terrestrial Gravimetry with Python}.
+  \GitHub{leouieda/gravity-processing}.
+\end{EntriesTableYear}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Grants and Fellowships}
+
+\begin{EntriesTableDuration}
+  \Duration{2022}{\Ongoing}  &
+  \textbf{Towards individual-grain paleomagnetism: Translating regional-scale geophysics to the nascent field of magnetic microscopy}.
+  \newline
+  Royal Society.
+  \Me{} (PI); \Ricardo{}.
+  Award: \href{https://www.compgeolab.org/news/rsoc-mag-microscopy-2022.html}{IES\textbackslash{}R3\textbackslash{}213141}
+  \\
+  \Duration{2020}{\Ongoing}  &
+  \textbf{A Sustainable Plan for the Future of the Generic Mapping Tools}.
+  \newline
+  NSF-EAR.
+  \Paul{} (PI); \Me{}.
+  Award: \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1948602}{1948602}.
+  \\
+  \Duration{2020}{2023}  &
+  \textbf{SSI Fellowship Programme}.
+  \newline
+  Software Sustainability Institute.
+  \Me{} (PI).
+  Award: \Website{software.ac.uk/about/fellows}
+  \\
+  \Duration{2018}{2024}  &
+  \textbf{The EarthScope/GMT Analysis and Visualization Toolbox}.
+  \newline
+  NSF-EAR.
+  \Paul{} (PI); \Me{}; \Bridget{}.
+  Award: \href{https://www.nsf.gov/awardsearch/showAward?AWD_ID=1829371}{1829371}.
+\end{EntriesTableDuration}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Selected Invited Presentations}
+
+\begin{EntriesTableYear}
+\Year{2021}  &
+  \textbf{Design useful tools that do one thing well and work together: rediscovering the UNIX philosophy while building the Fatiando a Terra project}.
+  \newline
+  AGU 2021.
+  \Me; \LLi; \Santiago; \Agustina.
+  \GitHub{fatiando/agu2021}.
+  \\
+  &
+  \textbf{Open-science for gravimetry: tools, challenges, and opportunities}.
+  \newline
+  GFZ Helmholtz Centre Potsdam.
+  \Me; \Santiago; \Agustina.
+  \GitHub{leouieda/2021-06-22-gfz}.
+  \\
+  &
+  \textbf{Fatiando a Terra: Open-source tools for geophysics}.
+  \newline
+  Geophysical Society of Houston.
+  \Me; \Santiago; \Agustina.
+  \GitHub{fatiando/2021-gsh}.
+  \\
+\Year{2020}  &
+  \textbf{Geophysical research powered by open-source}.
+  \newline
+  Christian Albrechts Universität zu Kiel.
+  \Me.
+  \GitHub{leouieda/2020-07-01-kiel}.
+\end{EntriesTableYear}
+\fi
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Publication Highlights}
+
+\begin{EntriesTableYear}
+  \Year{2025}  &
+    \textbf{Integrated Sensing and Communication System Based on Radio Frequency Resonance Beam}.
+    \newline
+    Y. Guo, \Me, \Xml, \Lqw, \Zsl, \Fw, \Jqw, G. Yan, J. Mu.
+    \newline
+    Under submission to IEEE Journal on Selected Areas in Communication. 
+    arXiv:\href{https://arxiv.org/pdf/2501.18878}{2501.18878}.
+    \\
+  \Year{2024}  &
+    \textbf{Frequency Division Duplexing Resonant Beam Communication}.
+    \newline
+    \Me, \Lqw, \Jqw, \Fw, \Lmq.
+    \newline
+    Major revision submitted to IEEE Transactions on Wireless Communications.
+    %|
+    %\Data{10.6084/m9.figshare.22672978}
+    \\
+  \Year{2024}  &
+    \textbf{Millimeter-wave Resonant Beam SWIPT}.
+    \newline
+    \Me, \Jqw, \Fw, \Lqw, \Zsl, \Lmq, \Xml.
+    IEEE Internet of Things Journal.
+    \DOI{10.1109/JIOT.2024.3452121}
+    Open science:
+    \GitHub{Collin911/RF-RBSWIPT}
+    %|
+    %\Data{10.6084/m9.figshare.22672978}
+    \\
+  \Year{2023}  &
+    \textbf{Auto-Protection for Resonant Beam SWIPT in 
+    Portable Applications}.
+    \newline
+    \Me, \Lqw, \Lmq, \Fw, \Xml, Y. Bai, \Lxz.
+    IEEE Internet of Things Journal.
+    \DOI{10.1109/JIOT.2023.3298521}
+    Open science:
+    \GitHub{Collin911/Resonant-Beam-AutoPro}
+    %|
+    %\Data{10.6084/m9.figshare.22672978}
+    \\
+  \Year{2023}  &
+    \textbf{NLOS Transmission Analysis for Mobile SLIPT Using Resonant Beam}.
+    \newline
+    \Lmq, \Me, \Xml, \Xmy, \Lqw, \Dh.
+    IEEE Transactions on Wireless Communications.
+    \DOI{10.1109/TWC.2023.3277593}
+    \\
+  \Year{2022}  &
+    \textbf{Integrated Communication and Positioning With Resonant Beam}.
+    \newline
+    \Lmq, \Me, \Xml, \Xmy, \Fw, \Lqw.
+    IEEE Transactions on Wireless Communications.
+    \DOI{10.1109/TWC.2022.3173929}
+    \\
+\end{EntriesTableYear}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Work Experience}
+
+\begin{EntriesTableDuration}
+  \Duration{2023}{2024}  &
+  \textbf{Research Mentor}, Chase Education Technology Co., Ltd., Hubei, China.
+  \newline  Mentor undergraduate students in 
+  conducting research projects related to computer science.
+  \\
+  \Duration{2019}{2022}  &
+  \textbf{Teaching Assistant}, \HDU, China.
+  \newline  
+    \textit{Signals and Systems}, 
+    \textit{Steganography and Digital Watermarking}.
+  \\
+    \Duration{2021}{2022}  &
+    \textbf{President of Student Union}, \HDU, China.
+    \newline  
+      Responsable for internal and financial affairs, 
+      and the Dept. Cultural \& Academic Activities.
+\end{EntriesTableDuration}
+
+%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%%
+\section{Honors \& Awards}
+
+\begin{EntriesTableYear}
+  \Year{2024} & 
+    \textbf{France Excellence EIFFEL Scholarship}.
+    Campus France, France.
+  \\
+  \Year{2024} & 
+    \textbf{National Scholarship for Master Students}.
+    Ministry of Education, China.
+  \\
+  \Year{2023} & 
+    \textbf{National Scholarship for Master Students}.
+    Ministry of Education, China.
+  \\
+  \Year{2021} & 
+    \textbf{Zhejiang Provincial Scholarship}.
+    Department of Education, Zhejiang, China.
+  \\
+    \Year{2020} & 
+      \textbf{National Scholarship for Undergraduate Students}.
+      Ministry of Education, China.
+  \\
+    \Year{2019} & 
+      \textbf{Zhejiang Provincial Scholarship}.
+      Department of Education, Zhejiang, China.
+\end{EntriesTableYear}
+
+\end{document}
