@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1751550941.96603 "/Users/collinxia/Documents/GitHub/myCV/resume.tex" "resume.pdf" "resume" 1751550942.53784 0
-  "/Users/collinxia/Documents/GitHub/myCV/resume.tex" 1751550941.75068 15691 c8a279acc0eb263c28eab0d9ad4fe580 ""
+["pdflatex"] 1754018776.61946 "/Users/collinxia/Documents/GitHub/myCV/resume.tex" "resume.pdf" "resume" 1754018777.16115 0
+  "/Users/collinxia/Documents/GitHub/myCV/resume.tex" 1754018776.40529 15685 de169de1145b5f670749bc868be8cf4d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/atkinson/atksn_cvs3iv.enc" 1612564038 2852 0e84d9c42a84502cb059a346f06c6632 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc" 1558300257 2905 926f570532f1104044846d18d8d97080 ""
@@ -126,9 +126,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1734796172.92072 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1734796170 8221434 807186ddbe0e3820e0d18de2fd3d3405 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "resume.aux" 1751550942.47554 1112 da70e3de78cedb1de39e3dbcd5fe57b4 "pdflatex"
-  "resume.out" 1751550942.47598 492 b3f5c67a835e8f71e403bf00793326ae "pdflatex"
-  "resume.tex" 1751550941.75068 15691 c8a279acc0eb263c28eab0d9ad4fe580 ""
+  "resume.aux" 1754018777.10184 1112 da70e3de78cedb1de39e3dbcd5fe57b4 "pdflatex"
+  "resume.out" 1754018777.10229 492 b3f5c67a835e8f71e403bf00793326ae "pdflatex"
+  "resume.tex" 1754018776.40529 15685 de169de1145b5f670749bc868be8cf4d ""
   (generated)
   "resume.aux"
   "resume.log"

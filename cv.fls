@@ -251,11 +251,16 @@ INPUT /usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/atkinson/atkinsn-Regular-lf-t1.vf
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/atkinson/atkinsn-Regular-lf-t1--base.tfm
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/atkinson/atkinsn-Regular-lf-t1--lcdfj.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/atkinson/atkinsn-BoldItalic-lf-t1.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/vf/public/atkinson/atkinsn-BoldItalic-lf-t1.vf
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/atkinson/atkinsn-BoldItalic-lf-t1--base.tfm
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/tfm/public/atkinson/atkinsn-BoldItalic-lf-t1--lcdfj.tfm
 INPUT cv.aux
 INPUT ./cv.out
 INPUT ./cv.out
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/fontawesome5/FontAwesome5Brands-Regular.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/adobe/sourcecodepro/SourceCodePro-Regular.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/atkinson/atkinsn-Bold.pfb
+INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/atkinson/atkinsn-BoldItalic.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/atkinson/atkinsn-Italic.pfb
 INPUT /usr/local/texlive/2024/texmf-dist/fonts/type1/public/atkinson/atkinsn-Regular.pfb
