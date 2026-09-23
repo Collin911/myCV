@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1760685787.61971 "/Users/collinxia/Documents/GitHub/myCV/resume_job.tex" "resume_job.pdf" "resume_job" 1760685788.20508 0
-  "/Users/collinxia/Documents/GitHub/myCV/resume_job.tex" 1760685787.39946 19987 6bbcfd06e05fff0b97c73b4043fb982e ""
+["pdflatex"] 1764766522.02133 "/Users/collinxia/Documents/GitHub/myCV/resume_job.tex" "resume_job.pdf" "resume_job" 1764766522.61115 0
+  "/Users/collinxia/Documents/GitHub/myCV/resume_job.tex" 1764766521.78431 20096 505c6c336304e05f0a06e6e62c8292c2 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/atkinson/atksn_cvs3iv.enc" 1612564038 2852 0e84d9c42a84502cb059a346f06c6632 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/atkinson/atksn_ycy2xh.enc" 1612564038 3176 391809404193674ae2e225815b04d7d6 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/fontawesome5/fa5brands0.enc" 1622837620 2920 d63721872b8c77041b88e51b8f7c291d ""
@@ -132,9 +132,9 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1734796172.92072 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1734796170 8221434 807186ddbe0e3820e0d18de2fd3d3405 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "resume_job.aux" 1760685788.14201 1121 be38046dc73fa440d5b5a1c8e129ab3f "pdflatex"
-  "resume_job.out" 1760685788.14242 508 11dbde70089465ef11a6672e5b5a34a3 "pdflatex"
-  "resume_job.tex" 1760685787.39946 19987 6bbcfd06e05fff0b97c73b4043fb982e ""
+  "resume_job.aux" 1764766522.54752 1121 be38046dc73fa440d5b5a1c8e129ab3f "pdflatex"
+  "resume_job.out" 1764766522.54795 508 11dbde70089465ef11a6672e5b5a34a3 "pdflatex"
+  "resume_job.tex" 1764766521.78431 20096 505c6c336304e05f0a06e6e62c8292c2 ""
   (generated)
   "resume_job.aux"
   "resume_job.log"
