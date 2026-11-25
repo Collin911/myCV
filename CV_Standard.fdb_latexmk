@@ -1,6 +1,6 @@
 # Fdb version 4
-["pdflatex"] 1786001707.74519 "/Users/collinxia/Documents/GitHub/myCV/cvEPFL.tex" "cvEPFL.pdf" "cvEPFL" 1786001708.46282 0
-  "/Users/collinxia/Documents/GitHub/myCV/cvEPFL.tex" 1786001707.52955 17900 9bec39f2030b73976c93b8914574fd52 ""
+["pdflatex"] 1795608523.18843 "/Users/collinxia/Documents/GitHub/myCV/CV_Standard.tex" "CV_Standard.pdf" "CV_Standard" 1795608523.82157 0
+  "/Users/collinxia/Documents/GitHub/myCV/CV_Standard.tex" 1795608522.98109 17351 cab7da8825562399d6e1d0cbab236c52 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/atkinson/atksn_cvs3iv.enc" 1612564038 2852 0e84d9c42a84502cb059a346f06c6632 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/enc/dvips/sourcecodepro/a_lutrty.enc" 1558300257 2905 926f570532f1104044846d18d8d97080 ""
   "/usr/local/texlive/2024/texmf-dist/fonts/map/fontname/texfonts.map" 1577235249 3524 cb3e574dea2d1052e39280babc910dc8 ""
@@ -122,12 +122,12 @@
   "/usr/local/texlive/2024/texmf-var/fonts/map/pdftex/updmap/pdftex.map" 1734796172.92072 5467645 128b85b7cde5f5edc5cb7f1dd7ff8736 ""
   "/usr/local/texlive/2024/texmf-var/web2c/pdftex/pdflatex.fmt" 1734796170 8221434 807186ddbe0e3820e0d18de2fd3d3405 ""
   "/usr/local/texlive/2024/texmf.cnf" 1710266656 577 e590dabc9e28c5b61546e15f63eebcdf ""
-  "cvEPFL.aux" 1786001708.40362 1465 ff215a8ed02a050469bc361a32a9e19b "pdflatex"
-  "cvEPFL.out" 1786001708.40412 657 1b627054716b78ac94dbf74b1ac64b54 "pdflatex"
-  "cvEPFL.tex" 1786001707.52955 17900 9bec39f2030b73976c93b8914574fd52 ""
+  "CV_Standard.aux" 1795608523.76457 1465 ff215a8ed02a050469bc361a32a9e19b "pdflatex"
+  "CV_Standard.out" 1795608523.76514 657 1b627054716b78ac94dbf74b1ac64b54 "pdflatex"
+  "CV_Standard.tex" 1795608522.98109 17351 cab7da8825562399d6e1d0cbab236c52 ""
   (generated)
-  "cvEPFL.aux"
-  "cvEPFL.log"
-  "cvEPFL.out"
-  "cvEPFL.pdf"
+  "CV_Standard.aux"
+  "CV_Standard.log"
+  "CV_Standard.out"
+  "CV_Standard.pdf"
   (rewritten before read)
